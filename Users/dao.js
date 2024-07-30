@@ -1,12 +1,12 @@
 import model from "./model.js";
-export const createUser = (user) => {}; // implemented later
+export const createUser = (user) => {};
 export const findAllUsers = () => model.find();
 export const findUserById = (userId) => model.findById(userId);
 export const findUserByUsername = (username) =>
   model.findOne({ username: username });
 export const findUsersByRole = (role) => model.find({ role: role });
 export const findUsersByPartialName = (partialName) => {
-  const regex = new RegExp(partialName, "i"); // 'i' makes it case-insensitive
+  const regex = new RegExp(partialName, "i");
   return model.find({
     $or: [{ firstName: { $regex: regex } }, { lastName: { $regex: regex } }],
   });
