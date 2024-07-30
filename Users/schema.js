@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema(
       enum: ["STUDENT", "FACULTY", "ADMIN", "USER"],
       default: "USER",
     },
+    courseId: String,
     loginId: String,
     section: String,
     lastActivity: Date,
