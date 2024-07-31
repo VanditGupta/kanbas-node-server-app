@@ -36,7 +36,13 @@ export default function UserRoutes(app) {
     res.json(status);
   };
   const signup = async (req, res) => {};
-  const signin = async (req, res) => {};
+
+  const signin = async (req, res) => {
+    const { username, password } = req.body;
+    currentUser = await dao.findUserByCredentials(username, password);
+    res.json(currentUser);
+  };
+
   const signout = (req, res) => {};
   const profile = async (req, res) => {};
 
